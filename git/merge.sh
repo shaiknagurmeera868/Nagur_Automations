@@ -1,4 +1,4 @@
 cd /"Path for repository"
-git checkout "Source brnach name"
+git checkout "Target brnach name"
 
-git merge "targe branch name"
+git merge "Source branch name"
