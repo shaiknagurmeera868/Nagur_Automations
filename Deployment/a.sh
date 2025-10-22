@@ -7,7 +7,7 @@ ADMIN_SERVER_URL="url" # Replace with actual Admin Server URL
 
 WAR_FILE_PATH="/Path/NBC.war" # War file path
 APP_NAME="Name" # Name of Deployment
-MANAGED_SERVERS=("Managed_Server_11", "Managed_Server_12", "Managed_Server_21", "Managed_Server_22")
+MANAGED_SERVERS=("Managed_Server_1", "Managed_Server_2") # depended managed servers
 TARGETS=$(IFS=, ; echo "${MANAGED_SERVERS[*]}")
 
 Deploy_SCRIPT="/tmp/deploy_script.py" # Creat a temporary python file
@@ -34,7 +34,7 @@ except:
     exit()
 
 # Start the target servers
-for server in ${MANAGED_SERVERS[@]}; do
+for server in "${MANAGED_SERVERS[@]}"; do
     try:
         start(server, block='false')
         print('Starting server: ' + server)
