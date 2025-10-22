@@ -1,10 +1,14 @@
 #!/bin/bash
 
+Project="all project path"
 Source_of_War_File="/Source/file/path/NBC.war"
 Depended_Paths="Path"
 War_file_Extract="path"
 War_file_Extract_2="Path"
 Destination_War="path/NBC.war"
+
+cd "Project"
+mvn clean install
 
 cd "$War_file_Extract"
 jar xvf "$Source_of_War_File"
